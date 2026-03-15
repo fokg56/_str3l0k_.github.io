@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Portfolio</title>
+    <style>
+        /* Основные стили, чтобы скрипт выглядел как окно */
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --text-subtle: #94a3b8;
+            --accent: #38bdf8;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container { max-width: 800px; width: 100%; }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card-title { color: var(--accent); font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid #334155; padding-bottom: 5px; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 8px; font-size: 0.95rem; }
+        a { color: var(--accent); text-decoration: none; }
+        .skill-badge {
+            background: #334155;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin: 3px;
+            display: inline-block;
+        }
+        .timeline-item { margin-bottom: 15px; border-left: 2px solid var(--accent); padding-left: 10px; }
+        .progress-bar { background: #334155; height: 8px; border-radius: 4px; margin-top: 5px; margin-bottom: 15px; }
+        /* Анимация появления */
+        .delay-1 { animation: fadeIn 0.5s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="grid-container">
+        <!-- Основное -->
+        <div class="card delay-1">
+            <div class="card-header"><h2 class="card-title">Основное</h2></div>
+            <ul>
+                <li>Возраст: 15</li>
+                <li>Родился в: России</li>
+                <li>Нахожусь в: России</li>
+                <li>Время: МСК</li>
+                <li>Языки: RU, ENG</li>
+            </ul>
+        </div>
+
+        <!-- Контакты -->
+        <div class="card delay-1">
+            <div class="card-header"><h2 class="card-title">Контакты</h2></div>
+            <ul>
+                <li>Discord: ????????</li>
+                <!-- target="_blank" открывает в новой вкладке -->
+                <li>Telegram: <a href="https://t.me" target="_blank" rel="noopener">@main_git</a></li>
+            </ul>
+        </div>
+
+        <!-- Навыки -->
+        <div class="card delay-1">
+            <div class="card-header"><h2 class="card-title">Навыки</h2></div>
+            <div class="skills">
+                <span class="skill-badge">Python</span> <span class="skill-badge">HTML</span> 
+                <span class="skill-badge">CSS</span> <span class="skill-badge">C++</span> 
+                <span class="skill-badge">JS</span> <span class="skill-badge">GO</span> 
+                <span class="skill-badge">Cybersecurity</span> <span class="skill-badge">Robotics</span>
+            </div>
+        </div>
+
+        <!-- Проекты -->
+        <div class="card delay-1">
+            <div class="card-header"><h2 class="card-title">САМЫЕ УСПЕШНЫЕ Проекты</h2></div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date"><strong>DIY 3D scanner</strong></div>
+                    <div class="timeline-description">Прототип работает, разработка продолжается.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><strong>Open-source VPN</strong></div>
+                    <div class="timeline-description">На финальной стадии доработки.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><strong>AI for cybersecurity</strong></div>
+                    <div class="timeline-description">ИИ работает, идет процесс переобучения.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- О себе -->
+        <div class="card delay-1">
+            <div class="card-header"><h2 class="card-title">О себе</h2></div>
+            <p style="font-size: 0.9rem; color: var(--text-subtle); margin-bottom: 15px;">Увлекаюсь программированием, кибербезом и робототехникой.</p>
+            <div class="quote" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+                <span style="font-style: italic; font-size: 0.85rem;">За информацией обращаться в <a href="https://t.me" target="_blank" rel="noopener">ТГ</a></span>
+            </div>
+        </div>
+
+        <!-- Технологии -->
+        <div class="card delay-1">
+            <div class="card-header"><h2 class="card-title">Технологии</h2></div>
+            <div class="progress-label">Python <span style="float: right;">80%</span></div>
+            <div class="progress-bar"><div style="width: 80%; background: var(--accent); height: 100%; border-radius: 4px;"></div></div>
+            <div class="progress-label">C++ <span style="float: right;">15%</span></div>
+            <div class="progress-bar"><div style="width: 15%; background: var(--accent); height: 100%; border-radius: 4px;"></div></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
